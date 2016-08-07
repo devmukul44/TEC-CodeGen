@@ -1,0 +1,188 @@
+/*
+ * LED_Matrix_disp.c
+ *
+ * Created: 20-07-2014 16:22:30
+ *  Author: varun
+ */ 
+
+#define F_CPU 16000000UL
+#include <avr/io.h>
+#include "util/delay.h"
+#define dl 1
+
+
+int main(void)
+{
+	DDRC =0xFF;
+	DDRD =0xFF;
+    // This program requires D Port connected to +ve end and C Port to negetive end.
+  while(1)
+ {  
+	 uint8_t x=255;
+	 while(x>0)
+   	{   PORTC = ~(1<<1);	PORTD = (1<<6);	    _delay_ms(dl);              // T
+	   	PORTC = ~(1<<2); 	PORTD = (1<<6); 	_delay_ms(dl);
+	   	PORTC = ~(1<<3);    PORTD = (1<<6);     _delay_ms(dl);
+	   	PORTC = ~(1<<4);	PORTD = (1<<6);	    _delay_ms(dl);
+	   	PORTC = ~(1<<5); 	PORTD = (1<<6); 	_delay_ms(dl);
+	   	PORTC = ~(1<<3);  	PORTD = (1<<5); 	_delay_ms(dl);
+	   	PORTC = ~(1<<3);  	PORTD = (1<<4); 	_delay_ms(dl);
+	   	PORTC = ~(1<<3);  	PORTD = (1<<3); 	_delay_ms(dl);
+	   	PORTC = ~(1<<3);  	PORTD = (1<<2); 	_delay_ms(dl);
+	   	PORTC = ~(1<<3);  	PORTD = (1<<1); 	_delay_ms(dl);
+	   	PORTC = ~(1<<3);  	PORTD = (1<<0); 	_delay_ms(dl);
+	   	   	--x;
+    }
+
+ x=255;
+  while(x>0)
+ {                                                               // E
+	 PORTC = ~(1<<1);	PORTD = (1<<0);	    _delay_ms(dl);
+	 PORTC = ~(1<<2); 	PORTD = (1<<0); 	_delay_ms(dl);
+	 PORTC = ~(1<<3);   PORTD = (1<<0);     _delay_ms(dl);
+	 PORTC = ~(1<<4);	PORTD = (1<<0);	    _delay_ms(dl);
+	 PORTC = ~(1<<1);  	PORTD = (1<<1); 	_delay_ms(dl);
+	 PORTC = ~(1<<1);  	PORTD = (1<<2); 	_delay_ms(dl);
+	 PORTC = ~(1<<1);  	PORTD = (1<<3); 	_delay_ms(dl);
+	 PORTC = ~(1<<1);  	PORTD = (1<<4); 	_delay_ms(dl);
+	 PORTC = ~(1<<1);  	PORTD = (1<<5); 	_delay_ms(dl);
+	 PORTC = ~(1<<1);  	PORTD = (1<<6); 	_delay_ms(dl);
+	 PORTC = ~(1<<2);  	PORTD = (1<<6); 	_delay_ms(dl);
+	 PORTC = ~(1<<3);  	PORTD = (1<<6); 	_delay_ms(dl);
+	 PORTC = ~(1<<4);  	PORTD = (1<<6); 	_delay_ms(dl);
+	 PORTC = ~(1<<2);  	PORTD = (1<<3); 	_delay_ms(dl);
+	 PORTC = ~(1<<3);  	PORTD = (1<<3); 	_delay_ms(dl);
+	 	 --x;}	 
+
+  x=255;
+ while(x>0)
+ {   PORTC = ~(1<<1);	PORTD = (1<<0);	    _delay_ms(dl);  
+	 PORTC = ~(1<<1);	PORTD = (1<<1);	    _delay_ms(dl);     // C
+	 PORTC  =~(1<<1); 	PORTD = (1<<2); 	_delay_ms(dl);
+	 PORTC = ~(1<<1);   PORTD = (1<<3);    _delay_ms(dl);
+	 PORTC = ~(1<<1);	PORTD = (1<<4);	    _delay_ms(dl);
+	 PORTC = ~(1<<1); 	PORTD = (1<<5); 	_delay_ms(dl);
+	 PORTC = ~(1<<1);  	PORTD = (1<<6); 	_delay_ms(dl);
+	 PORTC = ~(1<<2);  	PORTD = (1<<0); 	_delay_ms(dl);
+	 PORTC = ~(1<<2);  	PORTD = (1<<6); 	_delay_ms(dl);
+	 PORTC = ~(1<<3);  	PORTD = (1<<0); 	_delay_ms(dl);
+	 PORTC = ~(1<<3);  	PORTD = (1<<6); 	_delay_ms(dl);
+	 PORTC = ~(1<<4);  	PORTD = (1<<0); 	_delay_ms(dl);
+	 PORTC = ~(1<<4);  	PORTD = (1<<1); 	_delay_ms(dl);
+	 PORTC = ~(1<<4);  	PORTD = (1<<5); 	_delay_ms(dl);
+	 PORTC = ~(1<<4);  	PORTD = (1<<6); 	_delay_ms(dl);
+	 	 --x;
+   }
+
+// for A
+x=255;
+while(x>0)
+{   PORTC =  ~(1<<1);   PORTD = (1<<0);     _delay_ms(dl);
+	PORTC  = ~(1<<1); 	PORTD = (1<<1); 	_delay_ms(dl);
+	PORTC  = ~(1<<1); 	PORTD = (1<<2); 	_delay_ms(dl);
+	PORTC  = ~(1<<1); 	PORTD = (1<<3); 	_delay_ms(dl);
+	PORTC  = ~(1<<1); 	PORTD = (1<<4); 	_delay_ms(dl);
+	PORTC  = ~(1<<1); 	PORTD = (1<<5); 	_delay_ms(dl);
+	PORTC  = ~(1<<2); 	PORTD = (1<<6); 	_delay_ms(dl);
+	PORTC  = ~(1<<2); 	PORTD = (1<<2);   	_delay_ms(dl);
+	PORTC  = ~(1<<3); 	PORTD = (1<<6); 	_delay_ms(dl);
+	PORTC  = ~(1<<3); 	PORTD = (1<<2); 	_delay_ms(dl);
+	PORTC  = ~(1<<4); 	PORTD = (1<<0); 	_delay_ms(dl);
+	PORTC  = ~(1<<4); 	PORTD = (1<<1); 	_delay_ms(dl);
+	PORTC  = ~(1<<4); 	PORTD = (1<<2); 	_delay_ms(dl);
+	PORTC  = ~(1<<4); 	PORTD = (1<<3); 	_delay_ms(dl);
+	PORTC  = ~(1<<4); 	PORTD = (1<<4); 	_delay_ms(dl);
+	PORTC  = ~(1<<4); 	PORTD = (1<<5); 	_delay_ms(dl);
+		--x;
+}
+
+
+// for B
+ x=255;
+ while(x>0)
+ {   PORTC = ~(1<<1);  PORTD = (1<<0);     _delay_ms(dl);
+	 PORTC  = ~(1<<1); 	PORTD = (1<<1); 	_delay_ms(dl);
+	 PORTC  = ~(1<<1); 	PORTD = (1<<2); 	_delay_ms(dl);
+	 PORTC  = ~(1<<1); 	PORTD = (1<<3); 	_delay_ms(dl);
+	 PORTC  = ~(1<<1); 	PORTD = (1<<4); 	_delay_ms(dl);
+	 PORTC  = ~(1<<1); 	PORTD = (1<<5); 	_delay_ms(dl);
+	 PORTC  = ~(1<<1); 	PORTD = (1<<6); 	_delay_ms(dl);
+	 PORTC  = ~(1<<4); 	PORTD = (1<<6); 	_delay_ms(dl);
+	 PORTC  = ~(1<<2); 	PORTD = (1<<0);   	_delay_ms(dl);
+	 PORTC  = ~(1<<2); 	PORTD = (1<<3); 	_delay_ms(dl);
+	 PORTC  = ~(1<<2); 	PORTD = (1<<6); 	_delay_ms(dl);
+	 PORTC  = ~(1<<3); 	PORTD = (1<<0); 	_delay_ms(dl);
+	 PORTC  = ~(1<<3); 	PORTD = (1<<3); 	_delay_ms(dl);
+	 PORTC  = ~(1<<3); 	PORTD = (1<<6); 	_delay_ms(dl);
+	 PORTC  = ~(1<<4); 	PORTD = (1<<1); 	_delay_ms(dl);
+	 PORTC  = ~(1<<4); 	PORTD = (1<<2); 	_delay_ms(dl);
+	 PORTC  = ~(1<<4); 	PORTD = (1<<4); 	_delay_ms(dl);
+	 PORTC  = ~(1<<4); 	PORTD = (1<<5); 	_delay_ms(dl);
+	 	 --x;
+ }
+
+x=255;
+while(x>0)
+{   PORTC = ~(1<<1);	PORTD = (1<<0);	    _delay_ms(dl);
+	PORTC = ~(1<<1);	PORTD = (1<<1);	    _delay_ms(dl);     // D
+	PORTC  =~(1<<1); 	PORTD = (1<<2); 	_delay_ms(dl);
+	PORTC = ~(1<<1);    PORTD = (1<<3);    _delay_ms(dl);
+	PORTC = ~(1<<1);	PORTD = (1<<4);	    _delay_ms(dl);
+	PORTC = ~(1<<1); 	PORTD = (1<<5); 	_delay_ms(dl);
+	PORTC = ~(1<<1);  	PORTD = (1<<6); 	_delay_ms(dl);
+	PORTC = ~(1<<2);  	PORTD = (1<<0); 	_delay_ms(dl);
+	PORTC = ~(1<<2);  	PORTD = (1<<6); 	_delay_ms(dl);
+	PORTC = ~(1<<3);  	PORTD = (1<<0); 	_delay_ms(dl);
+	PORTC = ~(1<<3);  	PORTD = (1<<6); 	_delay_ms(dl);
+	PORTC = ~(1<<4);  	PORTD = (1<<1); 	_delay_ms(dl);
+	PORTC = ~(1<<4);  	PORTD = (1<<5); 	_delay_ms(dl);
+	PORTC = ~(1<<5);  	PORTD = (1<<2); 	_delay_ms(dl);
+	PORTC = ~(1<<5);  	PORTD = (1<<3); 	_delay_ms(dl);
+	PORTC = ~(1<<5);  	PORTD = (1<<4); 	_delay_ms(dl);
+	--x;
+}
+
+
+x=255;
+while(x>0)
+{                                         // F
+	PORTC = ~(1<<1);	PORTD = (1<<0);	    _delay_ms(dl);
+	PORTC = ~(1<<1);  	PORTD = (1<<1); 	_delay_ms(dl);
+	PORTC = ~(1<<1);  	PORTD = (1<<2); 	_delay_ms(dl);
+	PORTC = ~(1<<1);  	PORTD = (1<<3); 	_delay_ms(dl);
+	PORTC = ~(1<<1);  	PORTD = (1<<4); 	_delay_ms(dl);
+	PORTC = ~(1<<1);  	PORTD = (1<<5); 	_delay_ms(dl);
+	PORTC = ~(1<<1);  	PORTD = (1<<6); 	_delay_ms(dl);
+	PORTC = ~(1<<2);  	PORTD = (1<<6); 	_delay_ms(dl);
+	PORTC = ~(1<<3);  	PORTD = (1<<6); 	_delay_ms(dl);
+	PORTC = ~(1<<4);  	PORTD = (1<<6); 	_delay_ms(dl);
+	PORTC = ~(1<<2);  	PORTD = (1<<3); 	_delay_ms(dl);
+	PORTC = ~(1<<3);  	PORTD = (1<<3); 	_delay_ms(dl);
+--x;}
+
+
+x=255;
+while(x>0)
+{   PORTC = ~(1<<1);	PORTD = (1<<0);	    _delay_ms(dl);
+	PORTC = ~(1<<1);	PORTD = (1<<1);	    _delay_ms(dl);     // G
+	PORTC  =~(1<<1); 	PORTD = (1<<2); 	_delay_ms(dl);
+	PORTC = ~(1<<1);   PORTD = (1<<3);     _delay_ms(dl);
+	PORTC = ~(1<<1);	PORTD = (1<<4);	    _delay_ms(dl);
+	PORTC = ~(1<<1); 	PORTD = (1<<5); 	_delay_ms(dl);
+	PORTC = ~(1<<1);  	PORTD = (1<<6); 	_delay_ms(dl);
+	PORTC = ~(1<<2);  	PORTD = (1<<0); 	_delay_ms(dl);
+	PORTC = ~(1<<2);  	PORTD = (1<<6); 	_delay_ms(dl);
+	PORTC = ~(1<<3);  	PORTD = (1<<0); 	_delay_ms(dl);
+	PORTC = ~(1<<3);  	PORTD = (1<<2); 	_delay_ms(dl);
+	PORTC = ~(1<<3);  	PORTD = (1<<6); 	_delay_ms(dl);
+	PORTC = ~(1<<4);  	PORTD = (1<<0); 	_delay_ms(dl);
+	PORTC = ~(1<<4);  	PORTD = (1<<1); 	_delay_ms(dl);
+	PORTC = ~(1<<4);  	PORTD = (1<<2); 	_delay_ms(dl);
+	PORTC = ~(1<<4);  	PORTD = (1<<5); 	_delay_ms(dl);
+	PORTC = ~(1<<4);  	PORTD = (1<<6); 	_delay_ms(dl);
+	--x;
+}
+
+   } // end of while1
+
+}//end of main
